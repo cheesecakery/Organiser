@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="colourCell" customModule="Organiser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMl-db-5iO">
+                        <rect key="frame" x="4" y="4" width="42" height="42"/>
+                        <color key="backgroundColor" name="OrangeA"/>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="GMl-db-5iO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="otr-QT-uQ5"/>
+                <constraint firstAttribute="trailing" secondItem="GMl-db-5iO" secondAttribute="trailing" constant="4" id="pHG-Z2-Y1M"/>
+                <constraint firstItem="GMl-db-5iO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="y0k-4c-5MS"/>
+                <constraint firstAttribute="bottom" secondItem="GMl-db-5iO" secondAttribute="bottom" constant="4" id="zxM-iN-oXh"/>
+            </constraints>
+            <connections>
+                <outlet property="colour" destination="GMl-db-5iO" id="dc9-WY-h35"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="55.580357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="OrangeA">
+            <color red="0.92199999094009399" green="0.41699999570846558" blue="0.087999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

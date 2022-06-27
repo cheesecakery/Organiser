@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName=".Activity" syncable="YES">
+        <attribute name="background" optional="YES" attributeType="Transformable" valueTransformerName="UIColorValueTransformer" customClassName=".UIColor"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="highlight" optional="YES" attributeType="Transformable" valueTransformerName="UIColorValueTransformer" customClassName="UIColor"/>
+        <attribute name="icon" optional="YES" attributeType="String" customClassName="UIImage"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="productivity" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timerCompleted" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="activities" inverseEntity="Day"/>
+        <relationship name="dayButCompleted" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="completedActivities" inverseEntity="Day"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="activities" inverseEntity="Goal"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="totalActivities" inverseEntity="Week"/>
+    </entity>
+    <entity name="Day" representedClassName=".Day" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="day" inverseEntity="Activity"/>
+        <relationship name="completedActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="dayButCompleted" inverseEntity="Activity"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="days" inverseEntity="Week"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Goal" representedClassName=".Goal" syncable="YES">
+        <attribute name="backgroundColour" optional="YES" attributeType="Transformable" valueTransformerName="UIColorValueTransformer" customClassName="UIColor"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goalTag" optional="YES" attributeType="String"/>
+        <attribute name="highlightColour" optional="YES" attributeType="Transformable" valueTransformerName="UIColorValueTransformer" customClassName="UIColor"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="timeCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalDuration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalProductivity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="goal" inverseEntity="Activity"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="goals" inverseEntity="Week"/>
+    </entity>
+    <entity name="Week" representedClassName=".Week" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="question1" optional="YES" attributeType="String"/>
+        <attribute name="question2" optional="YES" attributeType="String"/>
+        <attribute name="question3" optional="YES" attributeType="String"/>
+        <attribute name="question4" optional="YES" attributeType="String"/>
+        <attribute name="question5" optional="YES" attributeType="String"/>
+        <attribute name="questionnaireCompleted" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="parent" inverseEntity="Day"/>
+        <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="week" inverseEntity="Goal"/>
+        <relationship name="totalActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="week" inverseEntity="Activity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="startDate"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="-63" positionY="-18" width="128" height="239"/>
+        <element name="Day" positionX="-54" positionY="36" width="128" height="89"/>
+        <element name="Goal" positionX="-54" positionY="108" width="128" height="179"/>
+        <element name="Week" positionX="-54" positionY="72" width="128" height="194"/>
+    </elements>
+</model>

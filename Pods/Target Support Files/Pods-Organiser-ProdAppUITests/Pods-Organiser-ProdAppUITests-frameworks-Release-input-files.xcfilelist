@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Organiser-ProdAppUITests/Pods-Organiser-ProdAppUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
+${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework

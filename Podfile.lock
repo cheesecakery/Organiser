@@ -1,0 +1,26 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - FSCalendar (2.8.2)
+  - SwiftSVG (2.3.2)
+
+DEPENDENCIES:
+  - Charts (~> 3.6.0)
+  - FSCalendar
+  - SwiftSVG (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - FSCalendar
+    - SwiftSVG
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+
+PODFILE CHECKSUM: 21f71afa78ed0d08568c2ba06a4fe57a43a1dc5e
+
+COCOAPODS: 1.11.3
